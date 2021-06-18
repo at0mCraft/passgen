@@ -7,9 +7,12 @@ fn generate_password(diceware: String) -> String {
     let mut result: String = String::new();
     let mut iter = 0;
     let contents = fs::read_to_string(diceware).expect("Something went wrong reading the file");
-    while iter < 3 {
-        result += contents.lines().nth(rand::thread_rng().gen_range(1..1296)).expect("line couldn't be found");
+    while iter < 5 {
+        result += contents.lines().nth(rand::thread_rng().gen_range(1..7776)).expect("line couldn't be found");
         iter += 1;
+        if iter == 1 {
+            result = result.to_ascii_uppercase();
+        }
     }
     iter = 0;
     while iter < 5 {
