@@ -1,2 +1,6 @@
 # passgen
- password generator
+ safe password generator
+ 
+ 
+ # usage:
+   `cargo run`
