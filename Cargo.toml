@@ -2,7 +2,9 @@
 name = "passgen"
 version = "0.1.0"
 edition = "2018"
-
+authors = ["at0mCraft"]
+license = "MIT"
+repository = "https://github.com/at0mCraft/passgen"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
