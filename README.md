@@ -1,5 +1,7 @@
 # passgen
- safe password generator
+[![Rust](https://github.com/at0mCraft/passgen/actions/workflows/rust.yml/badge.svg)](https://github.com/at0mCraft/passgen/actions/workflows/rust.yml)
+
+ secure password generator
  
  
  #### usage:
