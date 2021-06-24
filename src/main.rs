@@ -17,16 +17,24 @@ fn generate_password(diceware: String) -> String {
         args[2].parse::<i32>().unwrap()
     };
     let contents = fs::read_to_string(diceware).expect("Something went wrong reading the file");
+    let uppercase_word: i32 = rand::thread_rng().gen_range(0..word_count);
     for mut i in 0..word_count {
-        result += contents
-            .lines()
-            .nth(rand::thread_rng().gen_range(1..7776))
-            .expect("line couldn't be found");
+        if i != uppercase_word {
+            result += contents
+              .lines()
+              .nth(rand::thread_rng().gen_range(1..7776))
+              .expect("line couldn't be found");
+        } else {
+            let word = contents
+              .lines()
+              .nth(rand::thread_rng().gen_range(1..7776))
+              .expect("line couldn't be found");
+            result += &word.to_ascii_uppercase();
+        }
         i += 1;
         if i != 1 {
             continue;
         }
-        result = result.to_ascii_uppercase();
     }
     for mut i in 0..num_count {
         result += &rand::thread_rng().gen_range(1..10).to_string();
